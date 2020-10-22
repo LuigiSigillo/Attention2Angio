@@ -10,6 +10,7 @@ from keras.optimizers import Adam
 from keras.models import Model
 import keras.backend as K
 from keras.initializers import RandomNormal
+from losses import perceptual_loss_fine,perceptual_loss_coarse,feature_matching_loss
 
 class ReflectionPadding2D(Layer):
     def __init__(self, padding=(1, 1), **kwargs):

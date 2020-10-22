@@ -1,4 +1,4 @@
-#* Work in progress *
+# -------------Work in Progress--------------------------
 # ICPR2020 Attention2Angio
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/attention2angiogan-synthesizing-fluorescein/fundus-to-angiography-generation-on-fundus)](https://paperswithcode.com/sota/fundus-to-angiography-generation-on-fundus?p=attention2angiogan-synthesizing-fluorescein)

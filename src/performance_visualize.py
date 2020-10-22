@@ -2,7 +2,7 @@ from matplotlib import pyplot
 from dataloader import load_real_data, generate_real_data, generate_fake_data_coarse, generate_fake_data_fine, resize
 import os
 
-def summarize_performance(step,g_global_model,g_local_model, dataset, n_samples=3,savedir='AAGAN'):
+def visualize_save_weight(step,g_global_model,g_local_model, dataset, n_samples=3,savedir='AAGAN'):
     # select a sample of input images
     n_patch = [1,1,1]
     [X_realA, X_realB], _ = generate_real_data(dataset, n_samples, n_patch)
@@ -46,7 +46,7 @@ def summarize_performance(step,g_global_model,g_local_model, dataset, n_samples=
     g_local_model.save(filename2)
     print('>Saved: %s and %s' % (filename1, filename2))
 
-def summarize_performance_global(step, g_model, dataset, n_samples=3,savedir='AA-GAN'):
+def visualize_save_weight_global(step, g_model, dataset, n_samples=3,savedir='AA-GAN'):
     # select a sample of input images
     n_patch = [1,1,1]
     [X_realA, X_realB], _ = generate_real_data(dataset, n_samples, n_patch)

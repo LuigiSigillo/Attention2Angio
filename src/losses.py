@@ -4,8 +4,8 @@ import keras.backend as K
 from keras.applications.vgg19 import VGG19,preprocess_input
 
 def perceptual_loss_fine(y_true, y_pred):
-    y_true = ((y_true + 1) / 2)* 255.0
-    y_pred = ((y_pred + 1) / 2) * 255.0
+    y_true = ((y_true + 1) / 2) #* 255.0
+    y_pred = ((y_pred + 1) / 2) #* 255.0
     print(y_true.shape)
     input_layer = Input((512,512,1))
     tripleOut = Concatenate()([input_layer,input_layer,input_layer])
@@ -33,8 +33,8 @@ def perceptual_loss_fine(y_true, y_pred):
     return perceptual_loss
     
 def perceptual_loss_coarse(y_true, y_pred):
-    y_true = ((y_true + 1) / 2) * 255.0
-    y_pred = ((y_pred + 1) / 2) * 255.0
+    y_true = ((y_true + 1) / 2) #* 255.0
+    y_pred = ((y_pred + 1) / 2) #* 255.0
     print(y_true.shape)
     input_layer = Input((256,256,1))
     tripleOut = Concatenate()([input_layer,input_layer,input_layer])

@@ -1,6 +1,6 @@
 from src.model import coarse_generator,fine_generator,aagan,discriminator
 from src.performance_visualize import visualize_save_weight, visualize_save_weight_global, plot_history
-from src.real_fake_data_loader import resize, generate_fake_data_coarse, generate_fake_data_fine, generate_real_data, load_real_data
+from src.dataloader import resize, generate_fake_data_coarse, generate_fake_data_fine, generate_real_data, load_real_data
 import argparse
 import time
 from numpy import load

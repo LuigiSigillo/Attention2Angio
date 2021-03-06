@@ -1,3 +1,7 @@
+import numpy as np
+from numpy import load
+import tensorflow as tf
+
 def load_real_data(filename):
 
     data = load(filename)

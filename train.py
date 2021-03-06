@@ -220,7 +220,7 @@ if __name__ == "__main__":
     gan_model = aagan(g_model_fine,g_model_coarse, d_model1, d_model2, d_model3, d_model4,
                   image_shape_fine,image_shape_coarse, image_shape_xglobal,label_shape_fine,label_shape_coarse)
     # train model
-    train(d_model1, d_model2, d_model3, d_model4,g_coarse_model, g_fine_model, gan_model, dataset, n_epochs=args.epochs, n_batch=args.batch_size, n_patch=[64,32,16],,savedir=args.savedir)
+    train(d_model1, d_model2, d_model3, d_model4,g_coarse_model, g_fine_model, gan_model, dataset, n_epochs=args.epochs, n_batch=args.batch_size, n_patch=[64,32,16],savedir=args.savedir)
   
     end_time = time.time()
     time_taken = (end_time-start_time)/3600.0

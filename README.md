@@ -13,10 +13,10 @@ https://arxiv.org/abs/2007.09191
 ```
 # Citation 
 ```
-@article{kamran2020attention2angiogan,
+@inproceedings{kamran2020attention2angiogan,
   title={Attention2AngioGAN: Synthesizing Fluorescein Angiography from Retinal Fundus Images using Generative Adversarial Networks},
   author={Kamran, Sharif Amit and Hossain, Khondker Fariha and Tavakkoli, Alireza and Zuckerbrod, Stewart Lee},
-  journal={arXiv preprint arXiv:2007.09191},
+  booktitle={International Conference on Pattern Recognition},
   year={2020}
 }
 ```

@@ -59,6 +59,41 @@ https://sites.google.com/site/hosseinrabbanikhorasgani/datasets-1/fundus-fluores
   publisher={Hindawi}
 }
 ```
+- Folder structure for training given below. Please make sure it matches with your local repository.
+├── Dataset
+|   ├──ABNORMAL
+|   ├──NORMAL
+
+### Dataset Pre-processing
+
+- Type this in terminal to run the random_crop.py file
+```
+python3 random_crop.py --output_dir=data --input_dim=512 --datadir=Dataset
+```
+- There are different flags to choose from. Not all of them are mandatory.
+```
+    '--input_dim', type=int, default=512
+    '--n_crops', type=int, default=50
+    '--datadir', type=str, required=True, help='path/to/data_directory',default='Dataset'
+    '--output_dir', type=str, default='data'   
+```
+
+### NPZ file conversion
+- Convert all the images to npz format
+```
+python3 convert_npz.py --outfile_name=attention2angio --input_dim=512 --datadir=data --n_crops=50
+```
+- There are different flags to choose from. Not all of them are mandatory.
+```
+    '--input_dim', type=int, default=512
+    '--n_crops', type=int, default=50
+    '--datadir', type=str, required=True, help='path/to/data_directory',default='data'
+    '--outfile_name', type=str, default='attention2angio'
+    '--n_images', type=int, default=17
+```
+
+## Training
+
 - Type this in terminal to run the train.py file
 ```
 python3 train.py --npz_file=attention2angio --batch=4 --epoch=100 --savedir=AAGAN

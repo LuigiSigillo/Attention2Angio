@@ -59,7 +59,7 @@ https://sites.google.com/site/hosseinrabbanikhorasgani/datasets-1/fundus-fluores
   publisher={Hindawi}
 }
 ```
-- Folder structure for training given below. Please make sure it matches with your local repository.
+- Folder structure for data-preprocessing given below. Please make sure it matches with your local repository.
 ```
 ├── Dataset
 |   ├──ABNORMAL

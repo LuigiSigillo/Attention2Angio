@@ -1,4 +1,3 @@
-# -------------Work in Progress--------------------------
 # ICPR2020 Attention2Angio
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/attention2angiogan-synthesizing-fluorescein/fundus-to-angiography-generation-on-fundus)](https://paperswithcode.com/sota/fundus-to-angiography-generation-on-fundus?p=attention2angiogan-synthesizing-fluorescein)
@@ -49,3 +48,30 @@ sudo pip3 -r requirements.txt
 ```
 https://sites.google.com/site/hosseinrabbanikhorasgani/datasets-1/fundus-fluorescein-angiogram-photographs--colour-fundus-images-of-diabetic-patients
 ```
+- Please cite the paper if you use their data
+```
+@article{hajeb2012diabetic,
+  title={Diabetic retinopathy grading by digital curvelet transform},
+  author={Hajeb Mohammad Alipour, Shirin and Rabbani, Hossein and Akhlaghi, Mohammad Reza},
+  journal={Computational and mathematical methods in medicine},
+  volume={2012},
+  year={2012},
+  publisher={Hindawi}
+}
+```
+- Type this in terminal to run the train.py file
+```
+python3 train.py --npz_file=attention2angio --batch=4 --epoch=100 --savedir=AAGAN
+```
+- There are different flags to choose from. Not all of them are mandatory
+
+```
+   '--npz_file', type=str, default='attenton2angio', help='path/to/npz/file'
+   '--batch_size', type=int, default=4
+   '--input_dim', type=int, default=512
+   '--epoch', type=int, default=100
+   '--savedir', type=str, required=False, help='path/to/save_directory',default='AAGAN'
+```
+
+# License
+The code is released under the MIT License, you can read the license file included in the repository for details.

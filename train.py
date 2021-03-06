@@ -176,9 +176,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--batch_size', type=int, default=4)
-    parser.add_argument('--npz_file', type=str, default='fun2angio', help='path/to/npz/file')
+    parser.add_argument('--npz_file', type=str, default='attenton2angio', help='path/to/npz/file')
     parser.add_argument('--input_dim', type=int, default=512)
-    parser.add_argument('--datadir', type=str, required=True, help='path/to/data_directory',default='Attention2AngioGAN')
     parser.add_argument('--savedir', type=str, required=False, help='path/to/save_directory',default='AAGAN')
     args = parser.parse_args()
 

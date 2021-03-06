@@ -96,7 +96,7 @@ python3 convert_npz.py --outfile_name=attention2angio --input_dim=512 --datadir=
 
 - Type this in terminal to run the train.py file
 ```
-python3 train.py --npz_file=attention2angio --batch=4 --epoch=100 --savedir=AAGAN
+python3 train.py --npz_file=attention2angio --batch=4 --epochs=100 --savedir=AAGAN
 ```
 - There are different flags to choose from. Not all of them are mandatory
 
@@ -104,7 +104,7 @@ python3 train.py --npz_file=attention2angio --batch=4 --epoch=100 --savedir=AAGA
    '--npz_file', type=str, default='attenton2angio', help='path/to/npz/file'
    '--batch_size', type=int, default=4
    '--input_dim', type=int, default=512
-   '--epoch', type=int, default=100
+   '--epochs', type=int, default=100
    '--savedir', type=str, required=False, help='path/to/save_directory',default='AAGAN'
 ```
 

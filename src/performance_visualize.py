@@ -142,3 +142,32 @@ def to_csv(d1_hist, d2_hist, d3_hist, d4_hist, d5_hist, d6_hist, d7_hist, d8_his
     df.columns=["d1","d2","d3","d4","d5","d6","d7","d8","fm1","fm2","fm3","fm4","g_global","g_local","g_g_per","g_l_per","g_g_rec","g_l_rec","gan"]
     filename = save_dir+"/attention-angio-loss.csv"
     df.to_csv(filename)
+    
+def to_csv(d1_hist, d2_hist, d3_hist, d4_hist, d5_hist, d6_hist, d7_hist, d8_hist, fm1_hist, fm2_hist, fm3_hist, fm4_hist, g_global_hist,g_local_hist, 
+                 g_global_percp_hist, g_local_percp_hist, g_global_recon_hist, g_local_recon_hist, gan_hist
+          ,savedir='AA-GAN'):
+    if not os.path.exists(savedir):
+        os.makedirs(savedir)
+    d1 = np.array(d1_hist)
+    d2 = np.array(d2_hist)
+    d3 = np.array(d3_hist)
+    d4 = np.array(d4_hist)
+    d5 = np.array(d5_hist)
+    d6 = np.array(d6_hist)
+    d7 = np.array(d7_hist)
+    d8 = np.array(d8_hist)
+    fm1 = np.array(fm1_hist)
+    fm2 = np.array(fm2_hist)
+    fm3 = np.array(fm3_hist)
+    fm4 = np.array(fm4_hist)
+    g_global = np.array(g_global_hist)
+    g_local = np.array(g_local_hist)
+    g_g_per = np.array(g_global_percp_hist)
+    g_l_per = np.array(g_local_percp_hist)
+    g_g_rec = np.array(g_global_recon_hist)
+    g_l_rec = np.array(g_local_recon_hist)
+    gan = np.array(gan_hist)
+    df = pd.DataFrame(data=(d1,d2,d3,d4,d5,d6,d7,d8,fm1,fm2,fm3,fm4,g_global,g_local,g_g_per,g_l_per,g_g_rec,g_l_rec,gan)).T
+    df.columns=["d1","d2","d3","d4","d5","d6","d7","d8","fm1","fm2","fm3","fm4","g_global","g_local","g_g_per","g_l_per","g_g_rec","g_l_rec","gan"]
+    filename = save_dir+"/attention-angio-loss.csv"
+    df.to_csv(filename)

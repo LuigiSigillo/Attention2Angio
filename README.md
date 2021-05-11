@@ -2,7 +2,7 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/attention2angiogan-synthesizing-fluorescein/fundus-to-angiography-generation-on-fundus)](https://paperswithcode.com/sota/fundus-to-angiography-generation-on-fundus?p=attention2angiogan-synthesizing-fluorescein)
 
-This code is for our paper "Attention2AngioGAN: Synthesizing Fluorescein Angiography from Retinal Fundus Images using Generative Adversarial Networks" which is part of the supplementary materials for ICPR 2020 conference. The paper has since been accpeted to ICPR 2020 and has been preseneted in January 2021.
+This code is for our paper "Attention2AngioGAN: Synthesizing Fluorescein Angiography from Retinal Fundus Images using Generative Adversarial Networks" which is part of the supplementary materials for ICPR 2020 conference. The paper has since been accpeted to ICPR 2020 and has been published.
 
 ![](img1.png)
 
@@ -10,16 +10,23 @@ This code is for our paper "Attention2AngioGAN: Synthesizing Fluorescein Angiogr
 ```
 https://arxiv.org/abs/2007.09191
 ```
+### IEEE Xplore
+```
+https://ieeexplore.ieee.org/abstract/document/9412428
+```
+
 # Citation 
 ```
-@inproceedings{kamran2020attention2angiogan,
-  title={Attention2AngioGAN: Synthesizing Fluorescein Angiography from Retinal Fundus Images using Generative Adversarial Networks},
+@INPROCEEDINGS{9412428,
   author={Kamran, Sharif Amit and Hossain, Khondker Fariha and Tavakkoli, Alireza and Zuckerbrod, Stewart Lee},
-  booktitle={2020 25th International Conference on Pattern Recognition (ICPR)},
-  pages={9122--9129},
-  year={2020},
-  organization={IEEE}
-}
+  booktitle={2020 25th International Conference on Pattern Recognition (ICPR)}, 
+  title={Attention2AngioGAN: Synthesizing Fluorescein Angiography from Retinal Fundus Images using Generative Adversarial Networks}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={9122-9129},
+  doi={10.1109/ICPR48806.2021.9412428}
+ }
 ```
 
 ## Pre-requisite

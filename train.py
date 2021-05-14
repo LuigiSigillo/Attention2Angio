@@ -216,7 +216,7 @@ if __name__ == "__main__":
     g_fine_model = fine_generator(x_coarse_shape=image_shape_xglobal,input_shape=image_shape_fine,nff=nff,n_blocks=3)
 
     # define fundus2angio 
-    gan_model = aagan(g_model_fine,g_model_coarse, d_model1, d_model2, d_model3, d_model4,
+    gan_model = aagan(g_fine_model,g_coarse_model, d_model1, d_model2, d_model3, d_model4,
                   image_shape_fine,image_shape_coarse, image_shape_xglobal,label_shape_fine,label_shape_coarse)
     # train model
     train(d_model1, d_model2, d_model3, d_model4,g_coarse_model, g_fine_model, gan_model, dataset, n_epochs=args.epochs, n_batch=args.batch_size, n_patch=[64,32,16],savedir=args.savedir)

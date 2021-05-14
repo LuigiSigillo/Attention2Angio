@@ -11,6 +11,7 @@ from keras.models import Model
 import keras.backend as K
 from keras.initializers import RandomNormal
 from src.losses import perceptual_loss_fine,perceptual_loss_coarse,feature_matching_loss
+from functools import partial
 
 class ReflectionPadding2D(Layer):
     def __init__(self, padding=(1, 1), **kwargs):

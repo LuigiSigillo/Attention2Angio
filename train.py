@@ -6,6 +6,7 @@ import time
 from numpy import load
 import gc
 import keras.backend as K
+from functools import partial
 
 def train(d_model1, d_model2, d_model3, d_model4, g_global_model, g_local_model, 
           gan_model, dataset, n_epochs=20, n_batch=1, n_patch=[64,32],savedir='AAGAN'):

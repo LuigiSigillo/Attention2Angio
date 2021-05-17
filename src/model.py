@@ -205,7 +205,12 @@ def discriminator(input_shape_fundus=(512, 512, 3),
 
     model = Model(inputs=[X_input_fundus, X_input_angio], outputs=[X]+features, name=name)
     model.summary()
-    model.compile(loss=['mse',None,None,None,None], optimizer=Adam(lr=0.0002, beta_1=0.5, beta_2=0.999))
+    loss = ['mse',None,None,None,None]
+    if n_layers == 2:
+        loss = loss[:-1]
+    elif n_layers == 1:
+        loss = loss[:len(loss)-2]
+    model.compile(loss=loss, optimizer=Adam(lr=0.0002, beta_1=0.5, beta_2=0.999))
     return model
 
 def aagan(g_model_fine,g_model_coarse, d_model1, d_model2, d_model3, d_model4,image_shape_fine,image_shape_coarse,image_shape_x_coarse,label_shape_fine,label_shape_coarse):

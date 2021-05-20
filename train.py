@@ -6,6 +6,7 @@ import time
 from numpy import load
 import gc
 import keras.backend as K
+import os
 
 def train(d_model1, d_model2, d_model3, d_model4, g_global_model, g_local_model, 
           gan_model, dataset, n_epochs=20, n_batch=1, n_patch=[64,32],savedir='AAGAN'):
@@ -202,12 +203,14 @@ if __name__ == "__main__":
     ndf=32
     ncf=64
     nff=64
+    dict_n_layers = {512 : 3, 256: 2, 128: 1}
+    n_layers = dict_n_layers[in_size]
     # define discriminator models
-    d_model1 = discriminator(image_shape_fine,label_shape_fine,ndf,n_downsampling=0,name="D1") # D1 Fine
-    d_model2 = discriminator(image_shape_fine,label_shape_fine,ndf,n_downsampling=1,name="D2") # D2 Fine 
+    d_model1 = discriminator(image_shape_fine,label_shape_fine,ndf,n_layers,n_downsampling=0,name="D1") # D1 Fine
+    d_model2 = discriminator(image_shape_fine,label_shape_fine,ndf,n_layers,n_downsampling=1,name="D2") # D2 Fine 
 
-    d_model3 = discriminator(image_shape_coarse,label_shape_coarse,ndf,n_downsampling=0,name="D3") # D1 Coarse
-    d_model4 = discriminator(image_shape_coarse,label_shape_coarse,ndf,n_downsampling=1,name="D4") # D2 Coarse
+    d_model3 = discriminator(image_shape_coarse,label_shape_coarse,ndf,n_layers,n_downsampling=0,name="D3") # D1 Coarse
+    d_model4 = discriminator(image_shape_coarse,label_shape_coarse,ndf,n_layers,n_downsampling=1,name="D4") # D2 Coarse
 
 
     # define generator models
@@ -216,7 +219,7 @@ if __name__ == "__main__":
     g_fine_model = fine_generator(x_coarse_shape=image_shape_xglobal,input_shape=image_shape_fine,nff=nff,n_blocks=3)
 
     # define fundus2angio 
-    gan_model = aagan(g_model_fine,g_model_coarse, d_model1, d_model2, d_model3, d_model4,
+    gan_model = aagan(g_fine_model,g_coarse_model, d_model1, d_model2, d_model3, d_model4,
                   image_shape_fine,image_shape_coarse, image_shape_xglobal,label_shape_fine,label_shape_coarse)
     # train model
     train(d_model1, d_model2, d_model3, d_model4,g_coarse_model, g_fine_model, gan_model, dataset, n_epochs=args.epochs, n_batch=args.batch_size, n_patch=[64,32,16],savedir=args.savedir)

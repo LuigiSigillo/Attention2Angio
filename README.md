@@ -48,7 +48,7 @@ sudo pip3 install keras==2.3.1
 ```
 - Install packages from requirements.txt
 ```
-sudo pip3 -r requirements.txt
+sudo pip3 install -r requirements.txt
 ```
 
 ### Dataset download link for Hajeb et al.
